@@ -226,7 +226,7 @@
 			return 300;
 		};
 
-		pf.applyBestCandidate( candidates, image );
+		pf.applyBestCandidate( [].concat(candidates), image );
 
 		deepEqual(image.src, "300", "uses the url from the best px fit" );
 		deepEqual(image.currentSrc, "300", "uses the url from the best px fit" );
@@ -234,7 +234,7 @@
 		image.src = "foo300";
 		image.currentSrc = "foo300";
 
-		pf.applyBestCandidate( candidates, image );
+		pf.applyBestCandidate( [].concat(candidates), image );
 
 		deepEqual(image.src, "foo300", "src left alone when matched" );
 		deepEqual(image.currentSrc, "foo300", "currentSrc left alone when matched" );
